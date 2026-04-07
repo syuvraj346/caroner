@@ -14,6 +14,10 @@ This file records the first manually provisioned Azure development resources for
 
 ## Provisioned Resources
 - Log Analytics Workspace: `log-caroner-dev`
+- Application Insights: `appi-caroner-dev`
+- App Service Plan: `asp-caroner-dev`
+- Web App: `app-caroner-web-dev`
+- API App: `app-caroner-api-dev`
 - Key Vault: `kv-caroner-dev-01`
 - Storage Account: `stcaronerdev01`
 - Redis Cache: `redis-caroner-dev-01`
@@ -22,8 +26,9 @@ This file records the first manually provisioned Azure development resources for
 ## Notes
 - PostgreSQL public network access is currently enabled for MVP setup speed.
 - Resource providers for Redis and PostgreSQL were auto-registered during first creation.
-- App hosting for web and API is not created yet.
-- Infrastructure should be codified into Bicep next, so the environment becomes reproducible.
+- App hosting for web and API is now created with Azure App Service.
+- Application Insights is provisioned and intended to back both web and API telemetry.
+- Infrastructure is partially codified in Bicep and should be refined to better handle pre-existing resources cleanly.
 
 ## Recommended Next Azure Steps
 1. Deploy App Service plan and web/API apps from Bicep.
