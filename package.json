@@ -1,0 +1,20 @@
+{
+  "name": "caroner",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace @caroner/web run dev",
+    "dev:api": "npm --workspace @caroner/api run start:dev",
+    "build:web": "npm --workspace @caroner/web run build",
+    "build:api": "npm --workspace @caroner/api run build",
+    "lint:web": "npm --workspace @caroner/web run lint",
+    "lint:api": "npm --workspace @caroner/api run lint"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

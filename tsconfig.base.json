@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@caroner/types/*": ["packages/types/*"],
+      "@caroner/config/*": ["packages/config/*"],
+      "@caroner/ui/*": ["packages/ui/*"]
+    }
+  }
+}

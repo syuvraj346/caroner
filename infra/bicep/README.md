@@ -1,30 +1,30 @@
 # Azure Bicep Templates
 
-This folder will contain Azure Bicep modules and environment parameter files.
+This folder contains the first Bicep templates for CarOner infrastructure.
 
-Suggested future structure:
+## Files
+- `main.bicep` - resource-group scoped deployment entrypoint
+- `modules/` - reusable Azure resource modules
+- `params/dev.bicepparam` - development environment parameters
 
-```text
-bicep/
-  main.bicep
-  modules/
-    app-service.bicep
-    postgres.bicep
-    redis.bicep
-    storage.bicep
-    key-vault.bicep
-    monitoring.bicep
-  params/
-    dev.bicepparam
-    staging.bicepparam
-    prod.bicepparam
+## Current Coverage
+The initial Bicep baseline models:
+- Log Analytics Workspace
+- Key Vault
+- Storage Account
+- Redis Cache
+- PostgreSQL Flexible Server
+
+## Deployment Example
+```powershell
+az deployment group create \
+  --resource-group rg-caroner-dev \
+  --template-file infra/bicep/main.bicep \
+  --parameters infra/bicep/params/dev.bicepparam \
+  --parameters postgresAdminPassword="<secure-password>"
 ```
 
-## First templates to add
-- resource group level deployment
-- app hosting resources
-- PostgreSQL server
-- Redis cache
-- Storage account
-- Key Vault
-- Application Insights and Log Analytics
+## Notes
+- This currently models the manually created dev baseline.
+- App hosting resources for web and API are not included yet.
+- Networking is intentionally minimal for MVP speed and should be hardened before staging or production.
