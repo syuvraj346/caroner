@@ -1,0 +1,142 @@
+
+CarOner Decacorn Services Pvt. Ltd.Here is the fully merged and detailed Scope of Requirements (SOR) for CarOner MVP, ensuring no single point is missed from both documents:
+
+Scope of Requirements (SOR) for CarOner MVP
+
+1. Project Overview
+CarOner is a unified platform that simplifies car ownership by integrating Emergency, Maintenance, Convenience, and Enhancement services into a single application. The MVP aims to provide core functionalities that offer a seamless user experience, support operational efficiency, and test market demand with a scalable solution.
+The MVP will target:
+50 Vendors
+1,000 Users
+
+2. Platforms
+Website: Responsive web application for vendors to register and manage their services.
+Mobile App: Cross-platform mobile application for iOS and Android, built using frameworks like Flutter or React Native.
+
+3. Key Features
+
+3.1. Home Screen Design
+Layout: 
+Four main service categories displayed as large, visually distinct cards or buttons: 
+Emergency Services
+Maintenance Services
+Convenience Services
+Enhancement Services
+Simple navigation bar with options: 
+Home
+My Bookings
+Profile
+Support
+Search Bar with location-based functionality for proximity searches.
+
+3.2. User Account Management
+User Registration/Login: 
+Options: Email, Phone Number (OTP-based), or Social Media login.
+Profile Section: 
+Personal Details: Name, Contact Info.
+Car Details: Make, Model, Registration Number, Insurance Details, Year of Manufacture.
+Password Management: Reset and Update options.
+
+3.3. Service Categories
+The MVP integrates 28 services, categorized as follows:
+Emergency Services:
+Roadside Assistance
+Towing
+Battery Jumpstart
+Fuel Delivery
+Flat Tire Repair
+Maintenance Services:
+Oil Changes
+General Servicing
+Tyre Shop Services
+Battery Shop Services
+Brake Pad Replacement
+AC Repair
+Car Wash
+Vehicle Inspection
+Convenience Services:
+Insurance Renewals
+Pollution Check
+Fastag Recharge
+Carpooling & Ridesharing
+Subscription Car Services
+Automotive Legal Services
+Lease and Rental Services
+Car Buying/Selling
+Enhancement Services:
+Car Detailing
+Interior Accessories Installation
+Vehicle Modifications
+Ceramic Coating
+Fleet Management
+EV Charging Stations
+Driver Concierge
+Car Club Memberships
+Service Details Page: 
+Service Description
+Estimated Cost
+Provider Reviews
+Booking Button
+
+3.4. Booking System
+Flow: 
+Select Service → Enter Details → Choose Provider → Confirm Booking.
+Features: 
+Real-time availability of service providers.
+Geo-location for nearby service discovery.
+Scheduling options (immediate or future date).
+Notifications for booking confirmations, cancellations, and updates.
+
+3.5. Service Provider Integration
+Registration: 
+Register with Business Name, Email/Phone (OTP verification), and Service Categories.
+Dashboard Features: 
+Add and manage services (name, price, description, images, location).
+View and respond to user requests.
+Manage booking statuses and reviews.
+
+3.6. Notifications & Alerts
+Push Notifications: 
+Booking updates, reminders for maintenance, and promotional offers.
+Email/SMS Alerts: 
+Booking confirmations, reminders, and critical updates.
+
+3.7. Support
+Customer Support: 
+In-app chat, phone, or email support.
+FAQs Section: 
+Quick resolutions for common queries.
+Emergency Contact Button: 
+Direct call to emergency support services.
+
+4. Technical Requirements
+
+4.1. Backend
+Cloud-hosted backend to manage user profiles, bookings, and service provider details.
+APIs for real-time updates (e.g., booking status, notifications).
+4.2. Database
+Centralized database for user profiles, car details, booking data, and service provider records.
+4.3. Frontend
+Mobile App: Clean and responsive UI/UX design for iOS and Android platforms.
+Web App: Vendor-specific dashboard and user support portal.
+4.4. Integrations
+Google Maps: Location-based service discovery.
+Third-Party APIs: For services like insurance renewals and pollution checks.
+
+5. Deliverables
+Functional website and mobile application with all features mentioned above.
+Admin dashboard for managing users, bookings, and service providers.
+API documentation for integrations.
+User manual for app usage.
+Post-launch technical support (initial period).
+
+6. Timeline
+The MVP development should be completed within 8-12 weeks, including testing and deployment.
+
+7. Budget
+Provide an estimated budget covering the website, mobile app, backend, and integrations.
+
+8. Key Objectives of MVP
+Test market demand with core functionalities.
+Build an initial user base of 1,000 users and 50 vendors.
+Gather user feedback for future iterations and improvements.
