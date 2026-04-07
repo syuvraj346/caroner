@@ -8,8 +8,12 @@ This folder contains the first Bicep templates for CarOner infrastructure.
 - `params/dev.bicepparam` - development environment parameters
 
 ## Current Coverage
-The initial Bicep baseline models:
+The current Bicep baseline models:
 - Log Analytics Workspace
+- Application Insights
+- App Service Plan
+- Linux Web App for frontend
+- Linux Web App for API
 - Key Vault
 - Storage Account
 - Redis Cache
@@ -25,6 +29,6 @@ az deployment group create \
 ```
 
 ## Notes
-- This currently models the manually created dev baseline.
-- App hosting resources for web and API are not included yet.
+- This models the manually created dev baseline plus MVP-ready app hosting resources.
+- Web and API hosting are currently defined with Azure App Service on Linux.
 - Networking is intentionally minimal for MVP speed and should be hardened before staging or production.

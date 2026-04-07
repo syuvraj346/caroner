@@ -26,8 +26,8 @@ This file records the first manually provisioned Azure development resources for
 - Infrastructure should be codified into Bicep next, so the environment becomes reproducible.
 
 ## Recommended Next Azure Steps
-1. Add Bicep templates for the current resources.
-2. Provision web and API hosting, App Service or Container Apps.
-3. Add Application Insights and alert rules tied to Log Analytics.
-4. Move secrets into Key Vault.
+1. Deploy App Service plan and web/API apps from Bicep.
+2. Add Application Insights and alert rules tied to Log Analytics.
+3. Move secrets into Key Vault.
+4. Add CI/CD deployment workflows.
 5. Lock down network access before staging/production.

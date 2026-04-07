@@ -28,6 +28,18 @@ param postgresAdminUser string
 @description('PostgreSQL admin password')
 param postgresAdminPassword string
 
+@description('Application Insights resource name')
+param applicationInsightsName string
+
+@description('App Service plan name')
+param appServicePlanName string
+
+@description('Customer and shared web app name')
+param webFrontendAppName string
+
+@description('Backend API app name')
+param apiAppName string
+
 @description('Tags applied to all supported resources')
 param tags object = {
   app: 'caroner'
@@ -49,6 +61,25 @@ module keyVault './modules/key-vault.bicep' = {
     location: location
     keyVaultName: keyVaultName
     tenantId: subscription().tenantId
+    tags: tags
+  }
+}
+
+module appInsights './modules/application-insights.bicep' = {
+  name: 'applicationInsightsDeployment'
+  params: {
+    location: location
+    applicationInsightsName: applicationInsightsName
+    workspaceResourceId: logAnalytics.outputs.workspaceId
+    tags: tags
+  }
+}
+
+module appServicePlan './modules/app-service-plan.bicep' = {
+  name: 'appServicePlanDeployment'
+  params: {
+    location: location
+    appServicePlanName: appServicePlanName
     tags: tags
   }
 }
@@ -82,8 +113,46 @@ module postgres './modules/postgres-flexible-server.bicep' = {
   }
 }
 
+module webFrontend './modules/linux-web-app.bicep' = {
+  name: 'webFrontendDeployment'
+  params: {
+    location: location
+    webAppName: webFrontendAppName
+    servicePlanId: appServicePlan.outputs.appServicePlanId
+    appInsightsConnectionString: appInsights.outputs.connectionString
+    appSettings: {
+      NODE_ENV: 'production'
+      PORT: '3000'
+    }
+    tags: union(tags, {
+      component: 'web'
+    })
+  }
+}
+
+module apiApp './modules/linux-web-app.bicep' = {
+  name: 'apiAppDeployment'
+  params: {
+    location: location
+    webAppName: apiAppName
+    servicePlanId: appServicePlan.outputs.appServicePlanId
+    appInsightsConnectionString: appInsights.outputs.connectionString
+    appSettings: {
+      NODE_ENV: 'production'
+      PORT: '8080'
+    }
+    tags: union(tags, {
+      component: 'api'
+    })
+  }
+}
+
 output logAnalyticsWorkspaceName string = logAnalytics.outputs.workspaceName
+output applicationInsightsName string = appInsights.outputs.applicationInsightsName
+output appServicePlanName string = appServicePlan.outputs.appServicePlanName
 output keyVaultName string = keyVault.outputs.keyVaultName
 output storageAccountName string = storage.outputs.storageAccountName
 output redisCacheName string = redis.outputs.redisCacheName
 output postgresServerName string = postgres.outputs.postgresServerName
+output webFrontendHostName string = webFrontend.outputs.defaultHostName
+output apiAppHostName string = apiApp.outputs.defaultHostName

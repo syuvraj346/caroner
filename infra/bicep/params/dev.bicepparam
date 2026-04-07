@@ -8,6 +8,10 @@ param storageAccountName = 'stcaronerdev01'
 param redisCacheName = 'redis-caroner-dev-01'
 param postgresServerName = 'psql-caroner-dev-01'
 param postgresAdminUser = 'caroneradmin'
+param applicationInsightsName = 'appi-caroner-dev'
+param appServicePlanName = 'asp-caroner-dev'
+param webFrontendAppName = 'app-caroner-web-dev'
+param apiAppName = 'app-caroner-api-dev'
 
 // Set securely at deploy time or replace with a Key Vault reference pattern.
 param postgresAdminPassword = '<SET_AT_DEPLOY_TIME>'
